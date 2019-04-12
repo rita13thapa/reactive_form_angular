@@ -1,0 +1,121 @@
+
+    
+      
+      
+
+
+
+<form [formGroup]="addForm" class="form-horizontal" (ngSubmit)="onSubmit()">
+  <div class="panel panel-primary">
+    
+    <div class="panel-heading">
+      <h3 class="panel-title">New Students</h3>
+    </div>
+   <!-- {{addForm.get('rollNo').invalid}}  --> 
+   <div class="form-group" class="{{addForm.get('rollNo').errors && (addForm.get('rollNo').touched || error) ? 'has-error' : 'has-primary'}}">
+      <label class="control-label" for="rollNo">Roll No:</label>
+       <input id="rollNo" type="number" formControlName="rollNo" class="form-control">
+
+       <span class="help-block" *ngIf ="addForm.get('rollNo').errors && (addForm.get('rollNo').touched || error)">
+        <span *ngIf="error && addForm.get('rollNo').errors.required">
+          Roll No is required.
+     </span>
+       </span>
+
+    </div>
+      
+    <div class="form-group" class="{{addForm.get('name').errors && (addForm.get('name').touched || error) ? 'has-error' : 'has-primary'}}">
+        <label class="control-label" for="name">Name:</label>
+         <input id="name" type="text" formControlName="name" class="form-control">
+  
+         <span class="help-block" *ngIf ="addForm.get('name').errors && (addForm.get('name').touched || error)">
+            <span *ngIf="error && addForm.get('name').errors.required">
+            Name is required.
+            </span>
+              <span  *ngIf="addForm.get('name').errors.minlength || addForm.get('name').errors.maxlength">
+                  Name must be greater than 2 characters and less than 15 characters.>
+                </span>
+              </span>
+  
+      </div>
+      
+      <div class="form-group" class="{{addForm.get('class').errors && (addForm.get('class').touched || error) ? 'has-error' : 'has-primary'}}">
+          <label class="control-label" for="class">Class:</label>
+           <input id="class" type="number" formControlName="class" class="form-control">
+    
+           <span class="help-block" *ngIf ="addForm.get('class').errors && (addForm.get('rollNo').touched || error)">
+            <span *ngIf="error && addForm.get('class').errors.required">
+              Class is required.
+         </span>
+           </span>
+    
+        </div>
+        
+       <div class=" form-group form-check form-check-inline" class="{{addForm.get('gender').errors && (addForm.get('gender').touched || error) ? 'has-error' : 'has-primary'}}">
+        <label class="control-label" for="gender">Gender:</label>
+            <label>
+                <input type="radio" formControlName="gender" id="male" value="Male" checked>Male:
+            </label>
+              <label>
+                  <input type="radio" formControlName="gender" id="female" value="Female">Female:
+              </label>
+              
+              <span class="help-block" *ngIf ="addForm.get('gender').errors && (addForm.get('gender').touched || error)">
+                <span *ngIf="error && addForm.get('gender').errors.required">
+                  Gender is required.
+             </span>
+               </span>
+
+              
+             </div>
+        
+        <div class="form-group" class="{{addForm.get('address').errors && (addForm.get('address').touched || error) ? 'has-error' : 'has-primary'}}">
+        <label class="control-label" for="address">Address:</label>
+         <input id="address" type="text" formControlName="address" class="form-control">
+
+         <span class="help-block" *ngIf ="addForm.get('address').errors && (addForm.get('address').touched || error)">
+          <span *ngIf="error && addForm.get('address').errors.required">
+            Address is required.
+       </span>
+         </span>
+  
+      </div>
+        
+      <div class="form-group" class="{{addForm.get('contactNo').errors && (addForm.get('contactNo').touched || error) ? 'has-error' : 'has-primary'}}">
+          <label class="control-label" for="contactNo">Contact No:</label>
+           <input id="contactNo" type="number" formControlName="contactNo" class="form-control">
+    
+           <span class="help-block" *ngIf ="addForm.get('contactNo').errors && (addForm.get('contactNo').touched || error)">
+            <span *ngIf="error && addForm.get('contactNo').errors.required">
+              Contact No is required.
+         </span>
+           </span>
+    
+        </div> 
+      
+      <div class="form-group" class="{{addForm.get('email').errors && (addForm.get('email').touched || error) ? 'has-error' : 'has-primary'}}">
+        <label class="control-label" for="email">Email:</label>
+          <input id="email" type="text" formControlName="email" class="form-control">
+             
+          <span class="help-block" *ngIf ="addForm.get('email').errors && (addForm.get('email').touched || error)">
+            <span *ngIf="error && addForm.get('email').errors.required">
+              Email is required.
+         </span>
+         <span *ngIf = "addForm.get('email').errors && addForm.get('email').errors.email">
+                Email is invalid.
+         </span>
+           </span>
+  
+      </div>    
+    
+       
+      <div class="pannel-footer">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+    </div>  
+  
+</form>
+
+
+
+

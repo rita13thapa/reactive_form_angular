@@ -1,0 +1,21 @@
+form{
+    box-sizing: border-box;
+
+    
+    width: 800px;
+    height: 650px;
+    
+}
+
+h3{
+    color:rgb(65, 7, 65);
+    text-align: center;
+    background-color: rgb(250, 131, 131);
+    
+}
+input[type=radio]{
+  margin: 0 30px 0 30px;
+}
+.pannel-footer{
+  background-color: rgb(127, 138, 231);
+}
