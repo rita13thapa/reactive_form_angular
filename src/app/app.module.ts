@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+
 import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -9,20 +11,24 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { AddstudentsComponent } from './addstudents/addstudents.component';
 
 import { NewService } from './service/new.service';
+import {HttpClientModule} from "@angular/common/http";
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentDetailsComponent,
-    AddstudentsComponent
+    AddstudentsComponent,
+    UsersComponent
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
     ],
   providers: [NewService],
