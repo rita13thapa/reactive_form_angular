@@ -1,28 +1,22 @@
  import { Injectable } from '@angular/core';
-
+ import {HttpClient} from '@angular/common/http';
  
 @Injectable({
   providedIn: 'root'
 })
 export class NewService {
-   details = [
-     
-       {rollNo : 1, name : 'Rita', class :7, gender :'female', address :'boudha', contactNo : 458689, email : 'fji@yahoo.com'} ,
-       {rollNo:2,name:'Rojit Manandhar',class:2,gender:'Male',address:'Hetauda',contactNo:67890,email:'jfdfj@yahoo.com'},
-       {rollNo:3,name:'Navin Shahi',class:7,gender:'Male',address:'Soyambhu',contactNo:24680,email:'jfdfj@yahoo.com'},
-       {rollNo:4,name:'Anupama Dhungana',class:9,gender:'Female',address:'Jorpati',contactNo:13579,email:'jfdfj@yahoo.com'}
-    
-   ]
-constructor() { 
+  url="https://jsonplaceholder.typicode.com/users"
+   
+constructor(private http:HttpClient) { 
                  
 
   }
   getDetails(){
-     return this.details;
+     return this.http.get(this.url);
   }
   addStudents(val){
    // console.log(val, 'hello');
-    this.details.push(val);
+    //this.details.push(val);
   }
 
   

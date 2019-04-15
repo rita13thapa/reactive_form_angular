@@ -1,0 +1,14 @@
+<table class="table table-hover">
+ <tr> <th>User Id</th>
+  <th>Id</th>
+  <th>Title</th>
+  <th>Completed</th>
+</tr>
+<tr *ngFor = "let todos of showDetails">
+     <td>{{todos.userId}}</td>
+     <td>{{todos.id}}</td>
+     <td>{{todos.title}}</td>
+     <td>{{todos.completed}}</td>
+</tr>
+
+</table>
